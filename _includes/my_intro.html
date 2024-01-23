@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Effect Example</title>
+    <style>
+        .typing-container {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            overflow: hidden;
+            margin: 20px;
+            width: 95%; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="typing-container-title" class="typing-container"></div>
+    <div id="typing-container-body" class="typing-container"></div>
+
+    <script>
+        function typeWriter(containerId, text, n, speed, callback) {
+            if (n < (text.length)) {
+                let currentText = text.substring(0, n+1);
+
+                // Replace markers with strong tags
+                currentText = currentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+                document.getElementById(containerId).innerHTML = currentText;
+                n++;
+                setTimeout(function() {
+                    typeWriter(containerId, text, n, speed, callback)
+                }, speed);
+            } else if (callback) {
+                // Final replacement to catch any markers at the end of the text
+                document.getElementById(containerId).innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                callback();
+            }
+        }
+
+        var title = "Joseph Bokan's Personal Website";
+        var body = "I am a current data analyst at **Michael Kors** working with the customer data team. " +
+                    "I have had past experieinces at the **New York Football Giants** as a Business Interlligence analyst intern " +
+                    "as well as a Data Analyst intern at **Radiate**.";
+        typeWriter("typing-container-title", title, 0, 100, function(){
+          typeWriter('typing-container-body', body, 0, 10)
+        });
+    </script>
+</body>
+</html>
+
