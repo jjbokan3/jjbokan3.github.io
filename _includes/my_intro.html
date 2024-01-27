@@ -23,6 +23,7 @@
                 let currentText = text.substring(0, n+1);
 
                 currentText = currentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                //currentText = currentText.replace(/# (.*)/g, '<h1>$1</h1>');
 
                 document.getElementById(containerId).innerHTML = currentText;
                 n++;
@@ -35,9 +36,9 @@
             }
         }
 
-        var title = "Joseph Bokan's Personal Website";
+        var title = "Hello, I'm **Joe**.";
         var body = "I am a current data analyst at **Michael Kors** working with the customer data team. " +
-                    "I have had past experieinces at the **New York Football Giants** as a Business Interlligence analyst intern " +
+                    "I have had past experiences at the **New York Football Giants** as a Business Interlligence analyst intern " +
                     "as well as a Data Analyst intern at **Radiate**.";
         typeWriter("typing-container-title", title, 0, 100, function(){
           typeWriter('typing-container-body', body, 0, 10)

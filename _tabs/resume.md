@@ -1,6 +1,6 @@
 ---
 title: Resume
-icon: fa-briefcase
+icon: fas fa-briefcase
 order: 1
 ---
 
