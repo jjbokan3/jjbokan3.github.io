@@ -22,7 +22,6 @@
             if (n < (text.length)) {
                 let currentText = text.substring(0, n+1);
 
-                // Replace markers with strong tags
                 currentText = currentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
                 document.getElementById(containerId).innerHTML = currentText;
@@ -31,7 +30,6 @@
                     typeWriter(containerId, text, n, speed, callback)
                 }, speed);
             } else if (callback) {
-                // Final replacement to catch any markers at the end of the text
                 document.getElementById(containerId).innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
                 callback();
             }
