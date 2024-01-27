@@ -23,7 +23,6 @@
                 let currentText = text.substring(0, n+1);
 
                 currentText = currentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                //currentText = currentText.replace(/# (.*)/g, '<h1>$1</h1>');
 
                 document.getElementById(containerId).innerHTML = currentText;
                 n++;
