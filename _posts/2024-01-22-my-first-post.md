@@ -23,21 +23,20 @@ def my_new_dag(): #Call tasks in the function body
 output = my_new_dag() # Run the dag
 ```
 
-> ### Parameters
->
->| @dag | Description |
->| ---- | ---- |
->|`dag_id` | A unique identifier for the DAG. |
->| `schedule_interval` | Defines how often the DAG runs. Accepts cron expressions or cron presets. |
->| `start_date` | The date when the DAG should start running. |
->| `end_date` | Optional. The date when the DAG should stop running. |
->| `catchup` | Whether or not to perform catch-up runs for past intervals. |
->| `default_args` | A dictionary of default parameters to be used for all tasks in the DAG. |
->| `description` | A string describing the DAG. |
->| `tags` | A list of tags to help categorize and filter DAGs in the UI. |
->| `max_active_runs` | The maximum number of active DAG runs, beyond which new runs are not triggered. |
->| `concurrency` | The number of task instances allowed to run concurrently. |
-{: .prompt-info }
+### Parameters
+
+| `@dag`              | Description                                                                     |
+|---------------------|---------------------------------------------------------------------------------|
+| `dag_id`            | A unique identifier for the DAG.                                                |
+| `schedule_interval` | Defines how often the DAG runs. Accepts cron expressions or cron presets.       |
+| `start_date`        | The date when the DAG should start running.                                     |
+| `end_date`          | Optional. The date when the DAG should stop running.                            |
+| `catchup`           | Whether or not to perform catch-up runs for past intervals.                     |
+| `default_args`      | A dictionary of default parameters to be used for all tasks in the DAG.         |
+| `description`       | A string describing the DAG.                                                    |
+| `tags`              | A list of tags to help categorize and filter DAGs in the UI.                    |
+| `max_active_runs`   | The maximum number of active DAG runs, beyond which new runs are not triggered. |
+| `concurrency`       | The number of task instances allowed to run concurrently.                       |
 
 
 ### Task Creation
@@ -49,18 +48,16 @@ def write_to_file(text):
         f.write(text)
 ```
 
-> [!parameters]
-> 
->| @task         | Description                                                                  |
->| ----------------- | ---------------------------------------------------------------------------- |
->| `task_id`         | A unique identifier for the task.                                            |
->| `multiple_outputs`| If set to True, allows a task to return a dictionary with multiple outputs.  |
->| `retry_delay`     | The time to wait before retrying a failed task instance.                     |
->| `retries`         | The number of retries that should be performed before marking it as failed. |
->| `depends_on_past` | If set to True, the task instance depends on the success of the previous run.|
->| `email_on_failure`| If set to True, sends an email when the task fails.                          |
->| `email_on_retry`  | If set to True, sends an email on task retry.                                |
->| `trigger_rule`    | Defines the rule to follow for triggering the task.                          |
+| @task              | Description                                                                   |
+|--------------------|-------------------------------------------------------------------------------|
+| `task_id`          | A unique identifier for the task.                                             |
+| `multiple_outputs` | If set to True, allows a task to return a dictionary with multiple outputs.   |
+| `retry_delay`      | The time to wait before retrying a failed task instance.                      |
+| `retries`          | The number of retries that should be performed before marking it as failed.   |
+| `depends_on_past`  | If set to True, the task instance depends on the success of the previous run. |
+| `email_on_failure` | If set to True, sends an email when the task fails.                           |
+| `email_on_retry`   | If set to True, sends an email on task retry.                                 |
+| `trigger_rule`     | Defines the rule to follow for triggering the task.                           |
 #### Bash commands
 Instead of relying on BashOperator, utilizing python's subprocess library provides more control.
 ```python
