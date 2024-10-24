@@ -1,5 +1,5 @@
 ---
-title: "My First Post"
+title: "Airflow Overview"
 date: 2024-01-22
 categories: data_engineering
 tags: [Jekyll, website, data]
@@ -48,7 +48,7 @@ def write_to_file(text):
         f.write(text)
 ```
 
-| @task              | Description                                                                   |
+| `@task`            | Description                                                                   |
 |--------------------|-------------------------------------------------------------------------------|
 | `task_id`          | A unique identifier for the task.                                             |
 | `multiple_outputs` | If set to True, allows a task to return a dictionary with multiple outputs.   |
