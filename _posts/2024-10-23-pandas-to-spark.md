@@ -1,4 +1,6 @@
-This is a guide to understanding the PySpark equivalents of Pandas methods, functions, and objects
+This is a guide to understanding the PySpark equivalents of Pandas methods, functions, and objects.
+Reference the below for information when switching
+---
 
 # PySpark (.sql)
 ## Window
