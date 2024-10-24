@@ -1,3 +1,5 @@
+This is a guide to understanding the PySpark equivalents of Pandas methods, functions, and objects
+
 # PySpark (.sql)
 ## Window
 Used to apply rank, denserank, lag, and lead functions (similar to SQL statements).
@@ -179,7 +181,8 @@ df.write.csv("file.csv", header=True)
 > - Encoding
 > - Header
 > - escapeQuotes
-{: .prompt-note }
+
+[//]: # ({: .prompt-note })
 
 ## Creating New Column
 ### Pandas
